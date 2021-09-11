@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div(class='params-card')
+    div(class='params-header')
+      h1 Zilliqa Hearbeat NFT
+      img.image(src="http://localhost:3000/images/result.jpg", width=800)
+    form(method='POST', action='/minting',  class='params-body')
+      input(type='submit', id='submit', name='submit', class='params-body-button')
+
+

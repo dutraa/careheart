@@ -1,0 +1,62 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #a2a2a2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+input, button, textarea {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-image: none;
+  background-color: #dadad3;
+  box-shadow: none;
+  padding: 5px;
+}
+input:focus, button:focus, textarea:focus {
+  outline: none;
+}
+
+textarea {
+  min-height: 50px;
+  resize: vertical;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.params-card {
+  border: 1px solid black;
+  max-width: 980px;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
+}
+.params-header {
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid black;
+}
+.params-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.params-body-button {
+    margin-top: 10px;
+    padding: 20px;
+    align-self: flex-end;
+    background-color: #ff0;
+}
+

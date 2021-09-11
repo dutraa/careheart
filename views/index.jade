@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div(class='params-card')
+    div(class='params-header')
+      h1 Zilliqa Hearbeat NFT
+      p This application reads ECG heartbeat of a person to mint a Zilliqua NFT.
+    form(method='POST', action='/reading', enctype="multipart/form-data", class='params-body')
+      div
+        span
+          label(for='port') ECG Port: 
+          input(type='text', id='port', name='port', value='/dev/ttyUSB0')
+        span
+          label(for='simulator') -- Simulator:               
+          input(type='checkbox', id='simulator', name='simulator', value='true')
+      br
+      label(for='name') Portrayed Person Name: 
+      input(type='text', id='name', name='name', value='Jane Doe')
+      br
+      label(for='portrait') Portrait Image:
+      input(type='file', id='portrait', name='portrait')
+      br
+      input(type='submit', id='submit', name='submit', class='params-body-button')

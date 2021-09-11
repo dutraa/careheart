@@ -1,0 +1,29 @@
+extends layout
+
+block script
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      var counter = 0
+      var timer = setInterval(()=>{
+
+        const http = new XMLHttpRequest()
+        http.open("GET", "http://localhost:3000/status")
+        http.send()
+        http.onload = () => {
+          const rsp = JSON.parse(http.response);
+          console.log(rsp.state)
+          document.getElementById("counter").innerHTML = counter;
+          counter += 1
+          if (rsp.state === "minted") {
+             window.location.replace("http://localhost:3000/minted");
+          }
+        }
+      }, 333)
+    }, false);
+
+block content
+  div(class='params-card')
+    div(class='params-header')
+      h1 Minting HEART NFT using contract
+      p #{contract}
+      h2(id="counter")

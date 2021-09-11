@@ -1,0 +1,28 @@
+extends layout
+
+block script
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      var timer = setInterval(()=>{
+
+        const http = new XMLHttpRequest()
+        http.open("GET", "http://localhost:3000/status")
+        http.send()
+        http.onload = () => {
+          const rsp = JSON.parse(http.response);
+          console.log(rsp.state)
+          document.getElementById("counter").innerHTML = rsp.counter;
+          if (rsp.state === "show") {
+             window.location.replace("http://localhost:3000/show");
+          }
+        }
+
+
+      }, 333)
+    }, false);
+
+block content
+  div(class='params-card')
+    div(class='params-header')
+      h1 Reading from #{readingFrom}
+      h2(id="counter")
