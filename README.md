@@ -1,4 +1,4 @@
-# zil-heartbeat-nft
+# careheart
 Generator for Zilliqa NFT containing heartbeat obtained by an ECG machine.
 
 ![nft](/doc-img/nft.jpg?raw=true "Zilliqa Heartbeat NFT")
